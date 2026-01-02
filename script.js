@@ -52,18 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll effect to navbar
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
+    const navContainer = document.querySelector('.nav-container');
     
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        } else {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    if (navContainer) {
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navContainer.style.backgroundColor = 'rgba(30, 30, 30, 0.98)';
+                navContainer.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.3)';
+            } else {
+                navContainer.style.backgroundColor = 'rgba(30, 30, 30, 0.95)';
+                navContainer.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -105,4 +110,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+
+
+
+
 
